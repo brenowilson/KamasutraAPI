@@ -1,0 +1,14 @@
+﻿version: '3.8'
+
+services:
+    db:
+        image: postgres
+        environment:
+            - POSTGRES_USER=kamasutra
+            - POSTGRES_PASSWORD=kamasutra123
+            - POSTGRES_DB=KamasutraDB
+        ports:
+            - "5432:5432"
+        restart: unless-stopped
+        volumes:
+            - ./db:/var/lib/postgresql/data/
